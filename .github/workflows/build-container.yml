@@ -3,6 +3,12 @@ name: Build FrameX Cloud Image
 on:
   push:
     branches: ["main"]
+    paths:
+      - "app.py"
+      - "requirements.txt"
+      - "Dockerfile"
+      - "static/**"
+      - ".github/workflows/build-container.yml"
   workflow_dispatch:
 
 permissions:
