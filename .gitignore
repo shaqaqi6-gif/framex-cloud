@@ -1,0 +1,6 @@
+node_modules/
+free-web/dist/
+free-web/public/ffmpeg/
+__pycache__/
+*.pyc
+storage/

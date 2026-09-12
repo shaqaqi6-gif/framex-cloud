@@ -19,12 +19,12 @@
             <p>تحسين الفيديو داخل جوالك — بدون رفع للسحابة</p>
           </div>
         </div>
-        <span class="badge">مجاني • محلي • v0.3 Direct</span>
+        <span class="badge">مجاني • محلي • v0.4 <span id="buildTag"></span></span>
       </header>
 
       <section class="card privacy-card">
         <strong>🔒 الفيديو يبقى في جهازك</strong>
-        <p>v0.3 يستخدم محرك FFmpeg مباشر داخل الصفحة بدون Module Worker لزيادة التوافق مع متصفحات الجوال.</p>
+        <p>المعالجة كلها تتم داخل جوالك. v0.4 يشغّل محرك FFmpeg في خيط منفصل من النوع الكلاسيكي — بدون Module Worker وبدون أي import ديناميكي — وهو سبب الخطأ السابق على متصفحات الجوال.</p>
       </section>
 
       <section class="card">
@@ -59,7 +59,7 @@
 
       <section id="resultCard" class="card result hidden"><div class="result-icon">✅</div><h2>الفيديو جاهز</h2><p id="resultInfo"></p><video id="resultVideo" controls playsinline></video><a id="downloadBtn" class="primary link-btn" download="framex-output.mp4">حفظ الفيديو</a></section>
 
-      <section class="notice"><strong>طريقة الاختبار الآن</strong><p>تأكد أن أعلى الصفحة يظهر v0.3 Direct. اختر مقطعًا قصيرًا ثم اترك «توافق الجوال 720p/30FPS». أثناء المعالجة قد تتجمد حركة الصفحة مؤقتًا لأن المحرك يعمل مباشرة داخلها.</p></section>
+      <section class="notice"><strong>طريقة الاختبار الآن</strong><p>تأكد أولًا أن أعلى الصفحة يظهر <b>v0.4</b>؛ إن ظهر رقم أقدم فالصفحة محفوظة في ذاكرة المتصفح — أغلق التبويب وافتحه من جديد. ثم اختر مقطعًا 3–8 ثوانٍ واترك «توافق الجوال 720p/30FPS». التحميل الأول يجلب نحو 32 ميجابايت من المحرك ويحفظه للمرات القادمة، لذلك كن على شبكة جيدة.</p></section>
     </main>
     <script type="module" src="/src/main.js"></script>
   </body>

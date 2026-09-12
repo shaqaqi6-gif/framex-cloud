@@ -29,13 +29,10 @@ jobs:
         working-directory: free-web
         run: npm install
 
-      - name: Stamp engine cache version
-        run: |
-          sed -i 's/ffmpeg-core.js?v=2/ffmpeg-core.js?v=3/g' free-web/src/main.js
-          sed -i 's/ffmpeg-core.wasm?v=2/ffmpeg-core.wasm?v=3/g' free-web/src/main.js
-
       - name: Build
         working-directory: free-web
+        env:
+          FRAMEX_BUILD_ID: ${{ github.sha }}
         run: npm run build
 
       - name: Publish trial build to gh-pages branch
