@@ -1,0 +1,13 @@
+{
+  "name": "FrameX Cloud",
+  "short_name": "FrameX",
+  "description": "TikTok 4K 60FPS cloud video enhancer",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#071017",
+  "theme_color": "#071017",
+  "orientation": "portrait-primary",
+  "icons": [
+    {"src":"/icons/icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
+  ]
+}
