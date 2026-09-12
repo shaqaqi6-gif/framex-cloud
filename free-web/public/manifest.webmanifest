@@ -1,8 +1,8 @@
 {
   "name": "FrameX Free",
   "short_name": "FrameX",
-  "start_url": "/framex-cloud/",
-  "scope": "/framex-cloud/",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
   "background_color": "#090b10",
   "theme_color": "#0b0d12",
