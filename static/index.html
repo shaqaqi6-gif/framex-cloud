@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#071017" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="FrameX" />
+  <title>FrameX Cloud — TikTok 4K 60FPS</title>
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="icon" href="/icons/icon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/app.css" />
+</head>
+<body>
+  <section id="loginGate" class="login-gate" hidden>
+    <div class="login-card">
+      <div class="login-logo">FX</div>
+      <h2>FrameX Cloud</h2>
+      <p>أدخل رمز الدخول للمتابعة</p>
+      <input id="pinInput" type="password" inputmode="numeric" autocomplete="current-password" placeholder="رمز الدخول" />
+      <button id="loginBtn">دخول</button>
+      <small id="loginMsg"></small>
+    </div>
+  </section>
+  <main id="appShell" class="shell">
+    <header class="topbar">
+      <div class="brand">
+        <span class="logo">FX</span>
+        <div><b>FrameX</b><small>Cloud Video Enhancer</small></div>
+      </div>
+      <span id="engineBadge" class="badge">اتصال…</span>
+    </header>
+
+    <section class="hero">
+      <span class="eyebrow">TikTok Max ✦</span>
+      <h1>جودة أعلى.<br><em>4K • 60 FPS</em></h1>
+      <p>اختر الفيديو من جوالك، واترك المعالجة للسحابة.</p>
+      <div class="cloud-note"><span>☁</span> لا يحتاج كمبيوتر</div>
+    </section>
+
+    <section class="card upload-card">
+      <input id="fileInput" type="file" accept="video/*" hidden />
+      <button id="pickBtn" class="pick-btn">
+        <span class="pick-icon">＋</span>
+        <span><b>اختر فيديو من الجوال</b><small>MP4 • MOV • WEBM • MKV</small></span>
+      </button>
+      <video id="preview" class="preview" controls playsinline hidden></video>
+      <div id="fileMeta" class="file-meta" hidden></div>
+      <button id="changeBtn" class="mini-btn" hidden>تغيير الفيديو</button>
+    </section>
+
+    <section class="card settings">
+      <div class="section-title"><span>الجودة</span><small>دقة الفيديو النهائي</small></div>
+      <div class="segmented three" id="qualityGroup">
+        <button data-quality="1080">1080p</button>
+        <button data-quality="2k">2K</button>
+        <button class="active" data-quality="4k">4K MAX</button>
+      </div>
+
+      <div class="section-title gap"><span>الإطارات</span><small>سلاسة الحركة</small></div>
+      <div class="segmented two" id="fpsGroup">
+        <button data-fps="30">30 FPS</button>
+        <button class="active" data-fps="60">60 FPS</button>
+      </div>
+
+      <div class="section-title gap"><span>ملاءمة الشاشة</span><small>للفيديو الأفقي</small></div>
+      <div class="segmented two" id="layoutGroup">
+        <button class="active" data-layout="fill">ملء 9:16</button>
+        <button data-layout="fit">كامل بدون قص</button>
+      </div>
+
+      <label class="toggle-row">
+        <span><b>تحسين تلقائي</b><small>تنقية + وضوح + ألوان محسّنة</small></span>
+        <input id="enhanceToggle" type="checkbox" checked />
+        <i></i>
+      </label>
+
+      <div class="preset-box">
+        <span>الإعداد الحالي</span>
+        <b id="presetText">2160 × 3840 • 60 FPS • 9:16</b>
+      </div>
+    </section>
+
+    <button id="startBtn" class="primary" disabled>ابدأ TikTok Max <span>↗</span></button>
+
+    <section id="progressCard" class="card progress-card" hidden>
+      <div class="progress-head">
+        <div><b id="progressTitle">رفع الفيديو</b><small id="progressMsg">تجهيز الرفع…</small></div>
+        <strong id="progressPct">0%</strong>
+      </div>
+      <div class="bar"><i id="progressBar"></i></div>
+      <p id="progressHint">بعد اكتمال الرفع تبدأ المعالجة السحابية تلقائيًا.</p>
+    </section>
+
+    <section id="resultCard" class="card result-card" hidden>
+      <div class="success">✓</div>
+      <h2>الفيديو جاهز</h2>
+      <p id="resultMeta">4K • 60 FPS</p>
+      <a id="downloadBtn" class="download" href="#">حفظ الفيديو على الجوال</a>
+      <button id="againBtn" class="ghost">تحسين فيديو آخر</button>
+      <small class="expiry">النسخة التجريبية تحذف النتائج تلقائيًا بعد مدة لحماية المساحة.</small>
+    </section>
+
+    <footer><span>FrameX Cloud</span><small>المعالجة تتم على الخادم • الفيديو لا يبقى دائمًا</small></footer>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
