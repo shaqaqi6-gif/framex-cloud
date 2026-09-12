@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#0b0d12" />
-    <meta name="description" content="FrameX Free — تحسين الفيديو محليًا على الجوال بدون رفعه إلى سيرفر." />
+    <meta name="description" content="FrameX Free — تحسين الفيديو محليًا على الجوال." />
     <link rel="manifest" href="./manifest.webmanifest" />
     <link rel="icon" href="./icon.svg" type="image/svg+xml" />
     <title>FrameX Free</title>
@@ -19,19 +19,19 @@
             <p>تحسين الفيديو داخل جوالك — بدون رفع للسحابة</p>
           </div>
         </div>
-        <span class="badge">مجاني • محلي • v0.3 Direct</span>
+        <span class="badge">مجاني • محلي • v0.4 Long</span>
       </header>
 
       <section class="card privacy-card">
-        <strong>🔒 الفيديو يبقى في جهازك</strong>
-        <p>v0.3 يستخدم محرك FFmpeg مباشر داخل الصفحة بدون Module Worker لزيادة التوافق مع متصفحات الجوال.</p>
+        <strong>📱 وضع الفيديو الطويل</strong>
+        <p>يعالج الفيديو أثناء تشغيله ويكتب النتيجة على أجزاء مشفّرة، لذلك لا يحتاج تحميل الفيديو كاملًا في ذاكرة المعالجة.</p>
       </section>
 
       <section class="card">
         <label class="upload" for="videoFile">
           <span class="upload-icon">🎬</span>
           <strong>اختر فيديو من الجوال</strong>
-          <small>لأول تجربة استخدم مقطع 3–8 ثوانٍ</small>
+          <small>يمكن الآن تجربة فيديو أطول — لا يوجد حد 3–5 ثوانٍ في الوضع الطويل</small>
         </label>
         <input id="videoFile" type="file" accept="video/*" hidden />
         <div id="fileInfo" class="file-info hidden"></div>
@@ -40,11 +40,11 @@
       <section class="card">
         <h2>اختر وضع المعالجة</h2>
         <div class="presets" id="presets">
-          <button class="preset active" data-preset="compat720"><span>✅</span><div><strong>توافق الجوال • 720p / 30FPS</strong><small>ابدأ بهذا الوضع — أخف اختبار</small></div></button>
-          <button class="preset" data-preset="smooth720"><span>⚡</span><div><strong>720p • 60FPS</strong><small>خفيف نسبيًا ومخصص للجوال</small></div></button>
-          <button class="preset" data-preset="smooth1080"><span>🚀</span><div><strong>1080p • 60FPS</strong><small>بعد نجاح وضع التوافق</small></div></button>
-          <button class="preset" data-preset="enhance1080"><span>✨</span><div><strong>1080p • Enhance</strong><small>تحسين الحجم والحدة بدون 60FPS</small></div></button>
-          <button class="preset danger" data-preset="experimental4k"><span>🔥</span><div><strong>4K • 60FPS تجريبي</strong><small>مقطع ثانيتين أو أقل فقط</small></div></button>
+          <button class="preset active" data-preset="long1080"><span>🎞️</span><div><strong>فيديو طويل • 1080p / 60FPS</strong><small>Streaming — الأفضل للجوال والفيديوهات الطويلة</small></div></button>
+          <button class="preset" data-preset="compat720"><span>✅</span><div><strong>توافق قصير • 720p / 30FPS</strong><small>FFmpeg مباشر للمقاطع القصيرة</small></div></button>
+          <button class="preset" data-preset="smooth720"><span>⚡</span><div><strong>قصير • 720p / 60FPS</strong><small>معالجة محلية أثقل</small></div></button>
+          <button class="preset" data-preset="smooth1080"><span>🚀</span><div><strong>قصير • 1080p / 60FPS</strong><small>للمقاطع القصيرة فقط</small></div></button>
+          <button class="preset danger" data-preset="experimental4k"><span>🔥</span><div><strong>4K • 60FPS تجريبي</strong><small>ما زال مخصصًا للمقاطع القصيرة جدًا</small></div></button>
         </div>
       </section>
 
@@ -59,7 +59,7 @@
 
       <section id="resultCard" class="card result hidden"><div class="result-icon">✅</div><h2>الفيديو جاهز</h2><p id="resultInfo"></p><video id="resultVideo" controls playsinline></video><a id="downloadBtn" class="primary link-btn" download="framex-output.mp4">حفظ الفيديو</a></section>
 
-      <section class="notice"><strong>طريقة الاختبار الآن</strong><p>تأكد أن أعلى الصفحة يظهر v0.3 Direct. اختر مقطعًا قصيرًا ثم اترك «توافق الجوال 720p/30FPS». أثناء المعالجة قد تتجمد حركة الصفحة مؤقتًا لأن المحرك يعمل مباشرة داخلها.</p></section>
+      <section class="notice"><strong>مهم</strong><p>وضع الفيديو الطويل يعمل في الزمن الحقيقي تقريبًا: فيديو مدته دقيقتان يحتاج قرابة دقيقتين للمعالجة. اترك الصفحة مفتوحة ولا تقفل الشاشة. في النسخة المجانية 60FPS هو إخراج بمعدل 60 إطارًا عبر محرك المتصفح، وليس RIFE/AI.</p></section>
     </main>
     <script type="module" src="/src/main.js"></script>
   </body>
