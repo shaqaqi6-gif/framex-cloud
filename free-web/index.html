@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#0b0d12" />
-    <meta name="description" content="FrameX Free — تحسين الفيديو محليًا على الجوال." />
+    <meta name="description" content="FrameX Free — TikTok HQ وSmooth 60 على الجوال." />
     <link rel="manifest" href="./manifest.webmanifest" />
     <link rel="icon" href="./icon.svg" type="image/svg+xml" />
     <title>FrameX Free</title>
@@ -16,22 +16,22 @@
           <div class="logo">FX</div>
           <div>
             <h1>FrameX Free</h1>
-            <p>تحسين الفيديو داخل جوالك — بدون رفع للسحابة</p>
+            <p>TikTok HQ • Smooth 60 • مشاركة مباشرة من الجوال</p>
           </div>
         </div>
-        <span class="badge">مجاني • محلي • v0.4 Long</span>
+        <span class="badge">v0.5 TikTok HQ</span>
       </header>
 
       <section class="card privacy-card">
-        <strong>📱 وضع الفيديو الطويل</strong>
-        <p>يعالج الفيديو أثناء تشغيله ويكتب النتيجة على أجزاء مشفّرة، لذلك لا يحتاج تحميل الفيديو كاملًا في ذاكرة المعالجة.</p>
+        <strong>🎬 60FPS فعلي — بدون تكرار الإطار فقط</strong>
+        <p>الوضع الأساسي يولّد إطارات وسطية بين الإطارات الأصلية. للمقاطع القصيرة يوجد Motion 60 أقوى بتحليل اتجاه الحركة.</p>
       </section>
 
       <section class="card">
         <label class="upload" for="videoFile">
           <span class="upload-icon">🎬</span>
           <strong>اختر فيديو من الجوال</strong>
-          <small>يمكن الآن تجربة فيديو أطول — لا يوجد حد 3–5 ثوانٍ في الوضع الطويل</small>
+          <small>الوضع الأساسي يدعم الفيديو الطويل حتى 10 دقائق في النسخة التجريبية</small>
         </label>
         <input id="videoFile" type="file" accept="video/*" hidden />
         <div id="fileInfo" class="file-info hidden"></div>
@@ -40,26 +40,61 @@
       <section class="card">
         <h2>اختر وضع المعالجة</h2>
         <div class="presets" id="presets">
-          <button class="preset active" data-preset="long1080"><span>🎞️</span><div><strong>فيديو طويل • 1080p / 60FPS</strong><small>Streaming — الأفضل للجوال والفيديوهات الطويلة</small></div></button>
-          <button class="preset" data-preset="compat720"><span>✅</span><div><strong>توافق قصير • 720p / 30FPS</strong><small>FFmpeg مباشر للمقاطع القصيرة</small></div></button>
-          <button class="preset" data-preset="smooth720"><span>⚡</span><div><strong>قصير • 720p / 60FPS</strong><small>معالجة محلية أثقل</small></div></button>
-          <button class="preset" data-preset="smooth1080"><span>🚀</span><div><strong>قصير • 1080p / 60FPS</strong><small>للمقاطع القصيرة فقط</small></div></button>
-          <button class="preset danger" data-preset="experimental4k"><span>🔥</span><div><strong>4K • 60FPS تجريبي</strong><small>ما زال مخصصًا للمقاطع القصيرة جدًا</small></div></button>
+          <button class="preset active" data-preset="tiktokSmooth60">
+            <span>🎵</span>
+            <div><strong>TikTok HQ • Smooth 60</strong><small>1080×1920 • إطارات وسطية فعلية • مناسب للفيديو الطويل</small></div>
+          </button>
+          <button class="preset" data-preset="motion60">
+            <span>🚀</span>
+            <div><strong>Motion 60 • أقوى تنعيم</strong><small>تحليل حركة فعلي • 1080p • حتى 30 ثانية حاليًا</small></div>
+          </button>
+          <button class="preset danger" data-preset="experimental4k">
+            <span>🔥</span>
+            <div><strong>4K Motion 60 تجريبي</strong><small>2160×3840 • للمقاطع القصيرة جدًا</small></div>
+          </button>
         </div>
       </section>
 
       <section class="card settings-grid">
-        <label><span>المقاس</span><select id="framing"><option value="fill">ملء 9:16 لتيك توك</option><option value="fit">إظهار الفيديو كاملًا</option></select></label>
-        <label><span>حدة التفاصيل</span><select id="sharpness"><option value="off">بدون — أخف</option><option value="normal">طبيعي</option><option value="strong">قوي</option></select></label>
+        <label>
+          <span>المقاس</span>
+          <select id="framing">
+            <option value="fill">ملء 9:16 لتيك توك</option>
+            <option value="fit">إظهار الفيديو كاملًا</option>
+          </select>
+        </label>
+        <label>
+          <span>حدة التفاصيل</span>
+          <select id="sharpness">
+            <option value="off">طبيعي — أخف</option>
+            <option value="normal">محسّن</option>
+            <option value="strong">قوي</option>
+          </select>
+        </label>
       </section>
 
-      <section id="statusCard" class="card hidden"><div class="status-head"><strong id="statusText">جاري التحضير…</strong><span id="statusPct">0%</span></div><div class="progress-track"><div id="progressBar" class="progress-bar"></div></div><p id="statusDetail" class="status-detail"></p></section>
-      <button id="startBtn" class="primary" disabled>ابدأ التحسين</button>
+      <section id="statusCard" class="card hidden">
+        <div class="status-head"><strong id="statusText">جاري التحضير…</strong><span id="statusPct">0%</span></div>
+        <div class="progress-track"><div id="progressBar" class="progress-bar"></div></div>
+        <p id="statusDetail" class="status-detail"></p>
+      </section>
+
+      <button id="startBtn" class="primary" disabled>ابدأ TikTok HQ</button>
       <button id="cancelBtn" class="secondary hidden">إلغاء المعالجة</button>
 
-      <section id="resultCard" class="card result hidden"><div class="result-icon">✅</div><h2>الفيديو جاهز</h2><p id="resultInfo"></p><video id="resultVideo" controls playsinline></video><a id="downloadBtn" class="primary link-btn" download="framex-output.mp4">حفظ الفيديو</a></section>
+      <section id="resultCard" class="card result hidden">
+        <div class="result-icon">✅</div>
+        <h2>الفيديو جاهز</h2>
+        <p id="resultInfo"></p>
+        <video id="resultVideo" controls playsinline></video>
+        <button id="shareTikTokBtn" class="primary hidden">📲 مشاركة إلى TikTok</button>
+        <a id="downloadBtn" class="secondary link-btn" download="FrameX-TikTok-HQ-60.mp4">حفظ الفيديو</a>
+      </section>
 
-      <section class="notice"><strong>مهم</strong><p>وضع الفيديو الطويل يعمل في الزمن الحقيقي تقريبًا: فيديو مدته دقيقتان يحتاج قرابة دقيقتين للمعالجة. اترك الصفحة مفتوحة ولا تقفل الشاشة. في النسخة المجانية 60FPS هو إخراج بمعدل 60 إطارًا عبر محرك المتصفح، وليس RIFE/AI.</p></section>
+      <section class="notice">
+        <strong>كيف نحافظ على الجودة؟</strong>
+        <p>FrameX يخرج 1080×1920 بمعدل 60FPS وبمعدل بيانات مرتفع. عند الضغط على «مشاركة إلى TikTok» ستظهر قائمة المشاركة في الجوال؛ اختر TikTok. تيك توك قد يعيد ضغط الفيديو بعد الرفع، لكننا نعطيه مصدرًا عالي الجودة من البداية.</p>
+      </section>
     </main>
     <script type="module" src="/src/main.js"></script>
   </body>
