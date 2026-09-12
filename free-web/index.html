@@ -19,19 +19,19 @@
             <p>تحسين الفيديو داخل جوالك — بدون رفع للسحابة</p>
           </div>
         </div>
-        <span class="badge">مجاني • محلي • تجريبي</span>
+        <span class="badge">مجاني • محلي • v0.2</span>
       </header>
 
       <section class="card privacy-card">
-        <strong>🔒 خصوصية كاملة</strong>
-        <p>الفيديو يبقى داخل جهازك. المعالجة تتم في المتصفح باستخدام WebAssembly.</p>
+        <strong>🔒 الفيديو يبقى في جهازك</strong>
+        <p>المعالجة تتم داخل المتصفح. النسخة الجديدة تبدأ بوضع خفيف للتأكد أن جهازك يستطيع تشغيل المحرك.</p>
       </section>
 
       <section class="card">
         <label class="upload" for="videoFile">
           <span class="upload-icon">🎬</span>
           <strong>اختر فيديو من الجوال</strong>
-          <small>يفضّل للتجربة مقطع من 5 إلى 15 ثانية</small>
+          <small>لأول تجربة استخدم مقطع 3–8 ثوانٍ</small>
         </label>
         <input id="videoFile" type="file" accept="video/*" hidden />
         <div id="fileInfo" class="file-info hidden"></div>
@@ -40,24 +40,32 @@
       <section class="card">
         <h2>اختر وضع المعالجة</h2>
         <div class="presets" id="presets">
-          <button class="preset active" data-preset="smooth1080">
+          <button class="preset active" data-preset="compat720">
+            <span>✅</span>
+            <div><strong>توافق الجوال • 720p / 30FPS</strong><small>ابدأ بهذا الوضع — أخف اختبار</small></div>
+          </button>
+          <button class="preset" data-preset="smooth720">
             <span>⚡</span>
-            <div><strong>1080p • 60FPS</strong><small>أفضل خيار للتجربة على الجوال</small></div>
+            <div><strong>720p • 60FPS</strong><small>خفيف نسبيًا ومخصص للجوال</small></div>
+          </button>
+          <button class="preset" data-preset="smooth1080">
+            <span>🚀</span>
+            <div><strong>1080p • 60FPS</strong><small>بعد نجاح وضع التوافق</small></div>
           </button>
           <button class="preset" data-preset="enhance1080">
             <span>✨</span>
-            <div><strong>1080p • Enhance</strong><small>تحسين جودة بدون توليد 60FPS</small></div>
+            <div><strong>1080p • Enhance</strong><small>تحسين الحجم والحدة بدون 60FPS</small></div>
           </button>
           <button class="preset danger" data-preset="experimental4k">
             <span>🔥</span>
-            <div><strong>4K • 60FPS تجريبي</strong><small>للمقاطع القصيرة جدًا فقط</small></div>
+            <div><strong>4K • 60FPS تجريبي</strong><small>مقطع 3 ثوانٍ أو أقل فقط</small></div>
           </button>
         </div>
       </section>
 
       <section class="card settings-grid">
         <label>
-          <span>قص الفيديو</span>
+          <span>المقاس</span>
           <select id="framing">
             <option value="fill">ملء 9:16 لتيك توك</option>
             <option value="fit">إظهار الفيديو كاملًا</option>
@@ -66,9 +74,9 @@
         <label>
           <span>حدة التفاصيل</span>
           <select id="sharpness">
+            <option value="off">بدون — أخف</option>
             <option value="normal">طبيعي</option>
             <option value="strong">قوي</option>
-            <option value="off">بدون</option>
           </select>
         </label>
       </section>
@@ -94,8 +102,8 @@
       </section>
 
       <section class="notice">
-        <strong>مهم قبل التجربة</strong>
-        <p>هذه النسخة المجانية لا تستخدم GPU أو AI سحابي. 60FPS يتم محليًا، و4K قد يكون بطيئًا جدًا أو يتوقف على بعض الجوالات بسبب الذاكرة. نبدأ بـ 1080p/60 للتأكد أن جهازك يتحمله.</p>
+        <strong>طريقة الاختبار الآن</strong>
+        <p>اختر مقطعًا قصيرًا ثم اترك الخيار الأول «توافق الجوال 720p/30FPS». إذا نجح، انتقل إلى 720p/60 ثم 1080p/60. وضع 4K يظل تجريبيًا لأن المعالجة تتم على ذاكرة الجوال نفسها.</p>
       </section>
     </main>
     <script type="module" src="/src/main.js"></script>
