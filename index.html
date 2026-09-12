@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0b0d12" />
+    <meta name="description" content="FrameX 60 — تجهيز فيديوهات MP4 الأصلية 60FPS للنشر من الجوال." />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" href="./icon.svg" type="image/svg+xml" />
+    <title>FrameX 60</title>
+    <script type="module" crossorigin src="./assets/index-BKJPmk8i.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-YCdkK261.css">
+  </head>
+  <body>
+    <main class="shell">
+      <header class="hero">
+        <div class="brand-row">
+          <div class="logo">FX</div>
+          <div>
+            <h1>FrameX 60</h1>
+            <p>Turbo Mobile • بدون إعادة ترميز • يحافظ على الجودة الأصلية</p>
+          </div>
+        </div>
+        <span class="badge">Commercial Beta v0.7</span>
+      </header>
+
+      <section class="card privacy-card">
+        <strong>🔒 المعالجة داخل جهازك</strong>
+        <p>FrameX Turbo لا يرفع الفيديو إلى خادم ولا يعيد ضغط الصورة. يعمل على ملفات MP4/H.264 التي يكون مصدرها 60FPS أصلًا.</p>
+      </section>
+
+      <section class="card">
+        <label class="upload" for="videoFile">
+          <span class="upload-icon">🎬</span>
+          <strong>اختر فيديو MP4</strong>
+          <small>سيتم فحص معدل الإطارات والترميز قبل إنشاء النتيجة</small>
+        </label>
+        <input id="videoFile" type="file" accept="video/mp4,video/*" hidden />
+        <div id="fileInfo" class="file-info hidden"></div>
+      </section>
+
+      <section id="compatibilityCard" class="card hidden">
+        <strong id="compatibilityText"></strong>
+      </section>
+
+      <section class="card">
+        <h2>اختر طريقة Turbo</h2>
+        <div class="presets" id="presets">
+          <button class="preset active" data-preset="turbo">
+            <span>⚡</span>
+            <div>
+              <strong>Turbo</strong>
+              <small>الأسرع • يحافظ على البكسلات والجودة الأصلية • للفيديو الأصلي 60FPS</small>
+            </div>
+          </button>
+          <button class="preset" data-preset="safe">
+            <span>🛡️</span>
+            <div>
+              <strong>Turbo Safe</strong>
+              <small>تعديل أخف على بنية MP4 للملفات الحساسة</small>
+            </div>
+          </button>
+        </div>
+      </section>
+
+      <section class="card">
+        <strong>🎬 ماذا لو الفيديو 24/30FPS؟</strong>
+        <p>لن ندّعي أنه أصبح 60FPS. سيظهر لك أنه يحتاج Studio 60 حقيقي. هذا المحرك سيكون منتجًا منفصلًا بعد اكتمال اختبارات الجودة والثبات.</p>
+      </section>
+
+      <section id="statusCard" class="card hidden">
+        <div class="status-head">
+          <strong id="statusText">جاري التحضير…</strong>
+          <span id="statusPct">0%</span>
+        </div>
+        <div class="progress-track"><div id="progressBar" class="progress-bar"></div></div>
+        <p id="statusDetail" class="status-detail"></p>
+      </section>
+
+      <button id="startBtn" class="primary" disabled>ابدأ FrameX Turbo</button>
+      <button id="cancelBtn" class="secondary hidden">إلغاء</button>
+
+      <section id="resultCard" class="card result hidden">
+        <div class="result-icon">✅</div>
+        <h2>الملف جاهز</h2>
+        <p id="resultInfo"></p>
+        <video id="resultVideo" controls playsinline></video>
+        <button id="shareTikTokBtn" class="primary hidden">📲 مشاركة إلى TikTok</button>
+        <a id="downloadBtn" class="secondary link-btn" download="FrameX-60FPS.mp4">حفظ الفيديو</a>
+      </section>
+
+      <section class="notice">
+        <strong>تنبيه تجاري مهم</strong>
+        <p>FrameX لا يضمن مشاهدات أو ترتيبًا أعلى، ولا يضمن بقاء سلوك أي منصة مستقبلًا. Turbo مخصص للحفاظ على جودة المصدر 60FPS وتعديل بنية MP4 بدون إعادة ترميز.</p>
+      </section>
+    </main>
+  </body>
+</html>
